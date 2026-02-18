@@ -203,6 +203,23 @@ dateTime()
 
     document.getElementById('card').innerHTML =
          greet+= "Your name here";
+         
+
+// fixes white background around embed in dark mode, and thus fixes light mode issues too. detects theme of notion and changes accordingly.
+(function(){
+  function setBodyBackground(){
+    try{
+      const isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.body.style.background = isDark ? '#191919' : '#ffffff';
+    } catch(e) {
+      document.body.style.background = '#ffffff';
+    }
+  }
+  if(window.matchMedia){
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(setBodyBackground);
+  }
+  setBodyBackground();
+})();
 // END
 </script>
 
