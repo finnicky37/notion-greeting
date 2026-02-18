@@ -3,7 +3,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Bebas+Neue" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,11 +34,13 @@ h1 {
     width: 100%;
 }
 
+
 .table-cell {
     display: table-cell;
     vertical-align: middle;
     text-align: center;
 }
+
 
 .card {
     padding: 10px 25px 10px 25px;
@@ -48,42 +52,63 @@ h1 {
     box-shadow: 2px 2px 1px 0px #330835;
 }
 
+
 .card:hover {
     margin-top: 2px;
     box-shadow: none;
 }
 
+
 .clock {
     display: inline;
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'EB Garamond', cursive;
     font-size: 2em;
-   
 }
+
 
 .time {
     display: inline;
     min-width: 37px;
 }
 
+
 .colon {
     font-size: 1.1em;
     display: inline-block;
 }
 
+
 .date {
     display: inline;
     min-width: 162px;
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'EB Garamond';
     font-size: 2em;
     padding-right: 30px;
 }
+
+
 .greet{
     
     display:inline;
-    font-family: 'Dancing Script', cursive;
+    font-family: 'EB Garamond';
+    font-weight: 450;
+    text-align: left;
     font-size: 2rem;
-     padding-right: 30px;
 }
+
+
+.name{
+    
+    display:inline;
+    font-family: 'EB Garamond';
+    font-weight: 450;
+    text-align: left;
+    font-size: 2rem;
+}
+
+
+
+
 
     </style>
 </head>
@@ -91,22 +116,21 @@ h1 {
     <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto:400,700" rel="stylesheet">
 
 <div class="full-table">
-  <div class="table-cell">
-    
     <div class="card">
         <div class="greet" id="greet"></div>
-      <div class="date" id="date"></div>
-      <div class="clock">
-        <div class="time" id="hour"></div>
-        <div class="colon">:</div>
-        <div class="time" id="min"></div>
-        <div class="colon">:</div>
-        <div class="time" id="sec"></div>
-      </div>
+        <div class hidden="date" id="date"></div>
+        <div class hidden="clock">
+        <div class hidden="time" id="hour"></div>
+        <div class hidden="colon">:</div>
+        <div class hidden="time" id="min"></div>
+        <div class hidden="colon">:</div>
+        <div class hidden="time" id="sec"></div>
     </div>
-    
-  </div>
 </div>
+
+
+
+
 
 <script>
     function date() {
@@ -128,11 +152,13 @@ else{
 }
 hrs = today.getHours();
 if (hrs < 12)
-        greet = 'Good Morning  ';
+        greet = 'Good Morning, Finnick.';
     else if (hrs >= 12 && hrs <= 17)
-        greet = 'Good Afternoon ';
-    else if (hrs >= 17 && hrs <= 24)
-        greet = 'Good Evening  ';
+        greet = 'Good Afternoon, Finnick.';
+    else if (hrs >= 17 && hrs <= 21)
+        greet = 'Good Evening, Finnick.';
+    else if (hrs >= 21 && hrs <= 24)
+        greet = 'Good Night, Finnick.';
 // console.log(today.toLocaleTimeString());
 document.getElementById('greet').innerHTML = greet;
 document.getElementById('hour').innerHTML = hour;
@@ -165,6 +191,8 @@ setTimeout(dateTime, 500);
 }
 
 dateTime()
+
+
 // END
 </script>
 
