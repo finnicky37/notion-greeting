@@ -160,7 +160,11 @@ else{
     seconds+=" am"
 }
 hrs = today.getHours();
-if (hrs < 12)
+if (hrs < 4)
+        greet = 'Happy Twighlight, Finnick.';
+    else if (hrs >= 4 && hrs <= 6)
+        greet = 'Bright and early, Finnick.';
+    else if (hrs >= 6 && hrs <= 12)
         greet = 'Good Morning, Finnick.';
     else if (hrs >= 12 && hrs <= 17)
         greet = 'Good Afternoon, Finnick.';
